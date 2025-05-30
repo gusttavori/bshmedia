@@ -1,0 +1,867 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+
+
+/* Reset de estilos padrões do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#starfield {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: #000000;
+}
+
+body {
+  cursor: alias;
+}
+
+
+/* Estilos globais */
+body {
+  font-family: 'Montserrat Alternates', sans-serif;
+    background-color: #000000; /* Fundo preto estilo espaço */
+    color: #ffffff;
+    background-size: 20px 20px, 20px 20px;
+    background-position: 0 0, 10px 10px;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+/* Contêiner centralizado com largura máxima */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Cabeçalho alinhado à direita */
+/* Cabeçalho com logo centralizada */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+header img {
+    width: 90px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto;
+    margin-right: 20px;
+}
+
+.hero-image img {
+    width: 5px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto;
+    margin-top: 100px;
+}
+/* Estilo da logo */
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #c48eff;
+    text-align: center;
+}
+
+/* Estrutura de seções principais */
+section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Divisão de colunas iguais */
+.hero-text,
+.filmmaker-info {
+    flex: 1;
+    text-align: left;
+}
+
+
+.hero-text,
+.filmmaker-info {
+    min-width: 260px;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.filmmaker-image {
+  padding: 12px; /* espaço entre o vídeo e o fundo */
+  background-color: #7700ff; /* cor do fundo */
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filmmaker-image video {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 30px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5); /* brilho suave ao redor */
+}
+
+
+.filmmaker-image:hover video {
+  animation: videoGlow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes videoGlow {
+  0% {
+    filter: drop-shadow(0 0 0px #dd1ff2);
+  }
+  100% {
+    filter: drop-shadow(0 0 12px #dd1ff2);
+  }
+}
+
+.slide-img video{
+    width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Imagens com borda e sombra roxa */
+.hero-image img {
+      width: 350px; /* Ajuste o tamanho da logo conforme necessário */
+    height: auto;
+    border-radius: 15px;
+    border: 3px solid #8a2be2;
+    box-shadow: 0 0 15px #8a2be2;
+    margin-bottom: 100px;
+}
+
+/* Títulos principais */
+.hero-text h1 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    color: #9241dd;
+    animation: floatText 3s ease-in-out infinite;
+}
+
+.hero-text p {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: #cccccc;
+}
+
+    h1:hover{ 
+    color: #fbfbfb;
+    animation: textGlow 1.5s ease-in-out infinite alternate;;
+}
+
+h2:hover{
+    color: #dd1ff2;
+    animation: textGlow 1.5s ease-in-out infinite alternate;;
+    
+}
+
+
+/*efeito hover*/
+
+@keyframes textGlow {
+    0% {
+        text-shadow:
+            0 0 5px #b18cff,
+            0 0 10px #b18cff,
+            0 0 20px #8a2be2,
+            0 0 30px #8a2be2,
+            0 0 40px #8a2be2,
+            0 0 50px #8a2be2;
+    }
+    100% {
+        text-shadow:
+            0 0 10px #d3aaff,
+            0 0 20px #d3aaff,
+            0 0 30px #c48eff,
+            0 0 40px #c48eff,
+            0 0 50px #c48eff,
+            0 0 60px #c48eff;
+    }
+}
+
+
+
+/* Estilos base para todos os botões */
+.btn {
+  padding: 5px 12px;
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  white-space: nowrap;
+}
+
+/* Ícone dentro do botão */
+.btn .btn-icon {
+  width: 20px;
+  height: 20px;
+  transition: filter 0.3s ease;
+}
+
+/* Hover: ícone escurece */
+.btn-watch:hover .btn-icon {
+  filter: brightness(0);
+}
+
+/* Botão primário roxo */
+.btn-hero{
+    background-color: #8a2be2;
+  color: #ffffff;
+  font-size: 0.75em;
+}
+
+.btn-hero:hover {
+  background-color: #ffffff;
+  color: #8a2be2;
+  transform: scale(1.05);
+}
+
+.btn-primary {
+  background-color: #8a2be2;
+  color: #ffffff;
+}
+.btn-primary:hover {
+  background-color: #ffffff;
+  color: #8a2be2;
+  transform: scale(1.05);
+}
+
+/* Botão secundário com borda branca */
+.btn-secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: #8a2be2;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+
+/* Estilo do texto de informações do filmmaker */
+.filmmaker-info .label {
+    font-size: 0.9em;
+    color: #cccccc;
+    margin-bottom: 5px;
+}
+
+.filmmaker-info h2 {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.filmmaker-info .details {
+    font-size: 0.9em;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.filmmaker-info .description {
+    font-size: 1em;
+    margin-bottom: 20px;
+    color: #dddddd;
+}
+
+/* Avaliação com estrelas douradas */
+.rating {
+    margin-bottom: 25px;
+}
+.rating i {
+    color: #ffd700;
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+/* Container de botões */
+.buttons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+/* Estilo do botão */
+.btn-watch {
+    display: flex;
+    align-items: center;   /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente se necessário */
+    gap: 0px;              /* Espaço entre ícone/imagem e texto */
+    padding: 10px 20px;
+}
+
+/* Imagem dentro do botão */
+.btn-watch img {
+    filter: brightness(0) invert(1);
+    width: 20px;
+    height: 20px;
+    position: static; /* Remove o top: 18px */
+}
+
+.btn-watch:hover img{
+  filter: brightness(0);
+}
+
+/* Se estiver usando ícone com <i> */
+.btn-watch i {
+    margin-right: 10px; /* Ajuste conforme o espaço desejado */
+}
+
+/* === CARROSSEL === */
+
+/* Container principal do carrossel com fundo gradiente roxo escuro e azul, bordas arredondadas e sombra */
+.carrossel {
+  background-color: rgba(138, 43, 226, 0.5);
+  border-radius: 25px;
+  padding: 100px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  width: 95%;
+  height: auto;
+  position: relative;
+  box-shadow: 0 0 0px rgba(255, 255, 255, 0.8);
+  margin: 0 auto 100px auto;
+  backdrop-filter: blur(1px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: visible;
+}
+
+/* Container dos slides, alinhados em linha com overflow oculto para esconder slides não ativos */
+.slides-container {
+  display: flex;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* Cada slide individual (inicialmente escondido) */
+.slide {
+  display: none;
+  width: 100%;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 80px;
+  margin-left: 50px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Slide ativo visível, alinhado em linha e espaçado */
+.slide.active {
+  display: flex;
+  justify-content: space-between;
+    max-width: 1000px;
+  width: 80%;
+}
+
+/* Imagem do slide com borda azul neon e sombra */
+.slide-serviço video {
+  width: 300px;
+  height: auto;
+  border-radius: 15px;
+  border: 4px solid #ffffff;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.slide-serviço img {
+   width: 300px;
+  height: auto;
+  border-radius: 15px;
+  border: 4px solid #ffffff;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* Zoom suave ao passar o mouse na imagem */
+.slide-serviço video:hover {
+  transform: scale(0.95);
+}
+
+.slide-serviço img:hover {
+  transform: scale(0.95);
+}
+
+/* Container do texto do slide */
+.slide-texto {
+  flex: 1;
+  padding-bottom: 50px;
+}
+
+/* Título do slide com efeito de brilho */
+.slide-texto h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+
+}
+
+/* Parágrafo do slide com efeito de brilho mais suave */
+.slide-texto p {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #cceeff;
+  margin-bottom: 30px;
+}
+
+/* Botão chamativo com efeito hover */
+.botao {
+  padding: 14px 30px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #ffffff, #dddddd);
+  color: #7700ff;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 0 12px #fff;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  z-index: 9999;
+}
+
+.botao:hover {
+    background-color: #8a2be2;
+    transform: scale(1.05);
+    color:#000000;
+
+}
+
+
+/* Setas de navegação estilo neon */
+.arrow {
+    background: #000000;
+  width: 60px;
+  height: 60px;
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.arrow:hover {
+  background: #fffcfc;
+  color: #000000;
+  box-shadow: 0 0 20px #aaa;
+}
+
+#prev {
+  left: 20px;
+}
+#next {
+  right: 20px;
+}
+
+/* Animação suave de fade e movimento para entrada dos slides */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+        /* Estilização base do container */
+.container {
+  display: flex;
+  flex-direction: column; /* IMAGEM ACIMA DO TEXTO */
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.content {
+  order: 2; /* texto por último */
+}
+
+.video-preview {
+  order: 1; /* imagem primeiro */
+}
+
+.title-lead {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Botão de chamada para ação */
+.cta-button {
+  padding: 12px 25px;
+  background-color: #8a2be2;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #ffffff;
+  color: #8a2be2;
+  transform: scale(1.05);
+}
+
+/* Estilização da imagem */
+.video-preview img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 20px;
+  border: 3px solid #8a2be2;
+  box-shadow: 0 0 15px #8a2be2;
+}
+
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+
+        .play-button {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .play-button:hover {
+            background: rgba(255, 255, 255, 1);
+            transform: scale(1.1);
+        }
+
+        .play-button::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-left: 20px solid #333;
+            border-top: 12px solid transparent;
+            border-bottom: 12px solid transparent;
+            margin-left: 4px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 2rem;
+                text-align: center;
+            }
+
+            .title {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .video-preview {
+                margin-left: 0;
+                margin-top: 2rem;
+            }
+
+            .phone-mockup {
+                width: 220px;
+                height: 320px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .title {
+                font-size: 2rem;
+            }
+
+            .phone-mockup {
+                width: 180px;
+                height: 280px;
+            }
+        }
+
+/* Botão de play no meio da tela */
+.play-button {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 16px;
+  width: 0;
+  height: 0;
+  border-left: 18px solid white;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+.play-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .title-lead, .title {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+
+  .video-preview {
+    max-width: 90%;
+  }
+}
+
+/* === RESPONSIVIDADE === */
+
+@media (max-width: 768px) {
+  .slide .video-preview {
+  max-width: 300px;
+}
+
+.phone-mockup {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 30px;
+  box-shadow: 0 0 30px #14002e;
+  position: relative;
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+}
+
+.video-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: none; /* Removendo fundo visual */
+}
+
+/* Botão de play no meio da tela */
+.play-button {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-button::before {
+  content: '';
+  position: absolute;
+  left: 22px;
+  top: 16px;
+  width: 0;
+  height: 0;
+  border-left: 18px solid white;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+}
+
+.play-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+  }
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .title-lead, .title {
+    font-size: 2rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 12px 30px;
+  }
+
+  .video-preview {
+    max-width: 90%;
+  }
+}
+
+  .carrossel {
+    padding: 30px 20px;
+  }
+
+  .slide-texto h2 {
+    font-size: 26px;
+  }
+
+  .slide-texto p {
+    font-size: 16px;
+  }
+
+  .botao {
+    padding: 12px 24px;
+  }
+
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 1024px) {
+  .slide.active {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .slide-serviço img,
+  .slide-serviço video {
+    width: 90%;
+    max-width: 320px;
+  }
+
+  .slide-texto {
+    padding: 0 20px 40px 20px;
+    text-align: center;
+  }
+
+  .botao {
+    margin: 0 auto;
+    display: inline-block;
+  }
+}
+
+@media (max-width: 768px) {
+  .carrossel {
+    padding: 60px 20px;
+    border-radius: 20px;
+  }
+
+  .slides-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .arrow {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+
+  #prev {
+    left: 10px;
+  }
+
+  #next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-texto h2 {
+    font-size: 24px;
+  }
+
+  .slide-texto p {
+    font-size: 16px;
+  }
+
+  .botao {
+    font-size: 0.95rem;
+    padding: 12px 25px;
+  }
+
+  .arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .container {
+    gap: 40px;
+    padding: 40px 10px;
+  }
+
+  .title-lead {
+    font-size: 2rem;
+  }
+}
+
